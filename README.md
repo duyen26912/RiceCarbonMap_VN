@@ -1,27 +1,41 @@
-# OCO XCO2
-OCO XCO2 downloads and visualises XCO2 data from NASA's Orbiting Carbon Observatory 2 ([OCO-2](https://www.nasa.gov/mission_pages/oco2/index.html)) satellite.
+# Dự án Phân tích OCO XCO2
+
+## Giới thiệu
+Dự án này tải xuống và trực quan hóa dữ liệu XCO2 (Carbon Dioxide trung bình theo cột) từ vệ tinh OCO-2 của NASA. Dự án tập trung vào việc phân tích nồng độ CO2 ở các khu vực cụ thể, đặc biệt là khu vực DBSH.
 
 ![OCO-2](https://upload.wikimedia.org/wikipedia/commons/3/34/Orbiting_Carbon_Observatory-2_artist_rendering_%28PIA18374%29.jpg)
 
+## Cấu trúc dự án
+```
+.
+├── CO2_DBSH/           # Dữ liệu CO2 cho khu vực DBSH
+├── ranhGioi_DBSH/      # Dữ liệu ranh giới khu vực DBSH
+├── data/               # Thư mục lưu trữ dữ liệu thô
+├── images/             # Thư mục lưu trữ hình ảnh trực quan
+├── Code_CO2.ipynb      # Notebook phân tích CO2
+├── oco_xco2_download.ipynb    # Notebook tải dữ liệu
+├── oco_xco2_analysis.ipynb    # Notebook phân tích dữ liệu
+└── oco_tools.py        # Các hàm tiện ích
+```
 
-## Area of study
-OCO-2 XCO2 data is processed for New Zealand during 2019.
+## Tính năng
+- Tải dữ liệu XCO2 từ vệ tinh OCO-2 của NASA GES DISC
+- Xử lý và phân tích dữ liệu nồng độ CO2
+- Tạo các biểu đồ trực quan và phân tích thống kê
+- Hỗ trợ phân tích cho khu vực cụ thể (DBSH)
 
-![NZ 2019 CO2](/images/oco2-xco2-nz-2019.png)
-
-![NZ 2019 CO2](/images/oco2-xco2-nz-2019-hist.png)
-
-![NZ 2019 CO2](/images/oco2-xco2-nz-2019-ravg.png)
-
-## Prerequisites
+## Yêu cầu hệ thống
 - Python https://www.python.org/downloads/
 - Jupyter https://jupyter.org/install
-- Conda (recommended) https://docs.conda.io/en/latest/miniconda.html
-- Panoply (optionally) - requires a JRE https://www.giss.nasa.gov/tools/panoply/download/
+- Conda (khuyến nghị) https://docs.conda.io/en/latest/miniconda.html
+- Panoply (tùy chọn) - yêu cầu JRE https://www.giss.nasa.gov/tools/panoply/download/
 
-## Running
-- `oco_xco2_download.ipynb` to download OCO-2 files from the NASA Goddard Earth Sciences (GES) Data and Information Services Center (DISC), ~ 20GB. 
-- `oco_xco2_analysis.ipynb` to read the files and generate the plots above.
+## Hướng dẫn sử dụng
+1. Tải dữ liệu:
+   - Chạy file `oco_xco2_download.ipynb` để tải dữ liệu từ OCO-2 (khoảng 20GB)
+   - Dữ liệu sẽ được lưu trong thư mục `data/`
 
-## Credits
-- SIF tools https://github.com/cfranken/SIF_tools
+2. Phân tích:
+   - Sử dụng `oco_xco2_analysis.ipynb` để phân tích tổng quan
+   - Sử dụng `Code_CO2.ipynb` để phân tích CO2 chi tiết
+   - Các biểu đồ được tạo sẽ được lưu trong thư mục `images/`
